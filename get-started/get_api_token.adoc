@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: get-started/get_api_token.html 
+keywords: token, obtain token 
+summary: 要使用 Astra Control REST API ，您需要获取 Astra API 令牌。 
+---
+= 获取 API 令牌
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+要使用 Astra Control REST API ，您需要获取 Astra API 令牌。
+
+
+
+== 概述
+
+API 令牌用于标识 Astra 的调用方，并且必须包含在每个 REST API 调用中。
+
+* 您需要使用Asta Web用户界面生成API令牌。
+* 用于生成令牌的操作步骤对于这两种Astra部署模式是相同的。只有用于访问Astra的URL不同。
+* 与令牌一起携带的用户身份以及相关权限由创建令牌的用户确定。
+* 令牌必须包含在中 `Authorization` HTTP请求标头。
+* 令牌创建后永不过期。
+* 您可以在 Astra Web 用户界面上撤消令牌。
+
+
+.相关信息
+* link:../additional/revoke_token.html["撤消 API 令牌"]
+
+
+
+
+== 创建 Astra API 令牌
+
+以下步骤介绍如何创建 Astra API 令牌。
+
+.开始之前
+您需要 Astra 帐户的凭据。
+
+.关于此任务
+此任务会在 Astra Web 界面上生成 API 令牌。此外，您还应检索帐户 ID ，在进行 API 调用时也需要使用此 ID 。
+
+.步骤
+. 使用您的帐户凭据登录ASRA、如下所示：
++
+** Asta控制服务： link:https://astra.netapp.io["https://astra.netapp.io"^]
+** Astra Control Center：使用安装期间为您的本地环境建立的URL
+
+
+. 单击页面右上角的图图标并选择 * API access* 。
+. 单击页面上的*生成API令牌*，然后在弹出窗口中单击*生成API令牌*。
+. 单击图标将令牌字符串复制到剪贴板并将其保存在编辑器中。
+. 复制并保存同一页面上提供的帐户 ID 。
+
+
+.完成后
+通过cURL或编程语言访问Astra Control REST API时、必须在HTTP中包含API承载令牌 `Authorization` 请求标题。

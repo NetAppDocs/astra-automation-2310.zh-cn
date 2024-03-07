@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/workflows_infra_before.html 
+keywords: workflows, infrastructure workflows, preparation 
+summary: 您可以使用这些工作流创建和维护用于Astra Control Center部署的基础架构。在许多情况下、这些工作流也可以与Astra Control Service结合使用。 
+---
+= 开始之前
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用这些工作流创建和维护用于Astra Control Center部署的基础架构。在许多情况下、这些工作流也可以与Astra Control Service结合使用。
+
+
+NOTE: NetApp 可以随时扩展和改进这些工作流，因此您应定期查看这些工作流。
+
+
+
+== 一般准备
+
+在使用任何 Astra 工作流之前，请务必查看 link:../get-started/prepare_to_use_workflows.html["准备使用这些工作流"]。
+
+
+
+== 工作流类别
+
+基础架构工作流按不同类别进行组织，以便更容易找到所需的工作流。
+
+[cols="25,75"]
+|===
+| 类别 | Description 
+
+
+| 身份和访问 | 通过这些工作流，您可以管理身份以及如何访问 Astra 。这些资源包括用户，凭据和令牌。 
+
+
+| LDAP配置 | 您可以选择将Astra控制中心配置为使用LDAP对选定用户进行身份验证。 
+
+
+| 集群 | 您可以添加受管 Kubernetes 集群，以便保护和支持这些集群所包含的应用程序。 
+
+
+| 云 | 通过这些工作流、可以访问通过Astra Control REST API提供的云。 
+
+
+| 存储分段 | 您可以使用这些工作流创建和管理用于存储备份的 S3 存储分段。 
+
+
+| 存储 | 通过这些工作流，您可以添加和维护存储后端和卷。 
+|===

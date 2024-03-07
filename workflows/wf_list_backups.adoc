@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_backups.html 
+keywords:  
+summary: 您可以列出为特定应用程序创建的备份。 
+---
+= 列出备份
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以列出为特定应用程序创建的备份。
+
+
+
+=== 开始之前
+
+您必须具有要列出备份的应用程序的ID。如果需要，您可以使用此工作流 link:wf_list_man_apps.html["列出应用程序"] 以查找应用程序。
+
+
+
+=== 1. 列出备份
+
+执行以下 REST API 调用。
+
+[cols="25,75"]
+|===
+| HTTP 方法 | 路径 
+
+
+| 获取 | /accouns/｛account_id｝/k8s/v1/apps/｛app_id｝/appBackups 
+|===
+
+
+===== 其他输入参数
+
+除了所有 REST API 调用通用的参数之外，此步骤的 curl 示例还使用以下参数。
+
+[cols="25,10,10,55"]
+|===
+| 参数 | Type | Required | Description 
+
+
+| 应用程序ID | 路径 | 是的。 | 标识拥有列出备份的受管应用程序。 
+|===
+
+
+===== curl 示例：返回应用程序的所有备份
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSON 输出示例
+
+[source, json]
+----
+{
+    "items": [
+        {
+            "type": "application/astra-appBackup",
+            "version": "1.1",
+            "id": "8edeb4a4-fd8b-4222-a559-1013145b28fc",
+            "name": "backup-david-oct28-1",
+            "bucketID": "a443e58f-59bd-4d45-835a-1bc7813f659a",
+            "snapshotID": "dfe237cb-57b7-4576-af4d-00ba3a8f2828",
+            "state": "completed",
+            "stateUnready": [],
+            "hookState": "success",
+            "totalBytes": 205219132,
+            "bytesDone": 205219132,
+            "percentDone": 100,
+            "metadata": {
+                "labels": [
+                    {
+                        "name": "astra.netapp.io/labels/read-only/triggerType",
+                        "value": "backup"
+                    }
+                ],
+                "creationTimestamp": "2022-10-28T21:58:37Z",
+                "modificationTimestamp": "2022-10-28T21:58:55Z",
+                "createdBy": "a530e865-23e8-4e2e-8020-e92c419a3867"
+            }
+        }
+    ],
+    "metadata": {}
+}
+----

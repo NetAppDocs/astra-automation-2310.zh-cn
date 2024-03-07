@@ -1,0 +1,12 @@
+---
+section: additional
+title: 其他注意事项
+entries:
+- title: RBAC安全性
+  url: "/additional/rbac.html"
+- title: 使用收集
+  url: "/additional/work_with_collections.html"
+- title: 诊断
+  url: "/additional/diagnostics_support.html"
+- title: 撤消 API 令牌
+  url: "/additional/revoke_token.html"

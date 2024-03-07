@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_clone_app.html 
+keywords:  
+summary: 您可以通过克隆现有应用程序来创建新应用程序。 
+---
+= 克隆应用程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以通过克隆现有应用程序来创建新应用程序。
+
+
+
+=== 开始之前
+
+请注意以下有关此工作流的信息：
+
+* 未使用应用程序备份或快照
+* 克隆操作在同一集群中执行
+* 新应用程序将放置在其他命名空间中
+
+
+
+NOTE: 要将应用程序克隆到其他集群、您需要更新 `clusterId` JSON输入中适合您环境的参数。
+
+
+
+=== 1.选择要克隆的应用程序
+
+执行工作流 link:wf_list_man_apps.html["列出应用程序"] 并选择要克隆的应用程序。用于克隆应用程序的 REST 调用需要多个资源值。
+
+
+
+=== 2.克隆应用程序
+
+执行以下REST API调用以克隆此应用程序。
+
+[cols="25,75"]
+|===
+| HTTP 方法 | 路径 
+
+
+| 发布 | /accouns/｛account_id｝/k8s/v2/apps 
+|===
+
+
+===== 其他输入参数
+
+除了所有 REST API 调用通用的参数之外，此步骤的 curl 示例还使用以下参数。
+
+[cols="25,10,10,55"]
+|===
+| 参数 | Type | Required | Description 
+
+
+| JSON | body | 是的。 | 提供克隆应用程序的参数。请参见以下示例。 
+|===
+
+
+===== JSON 输入示例
+
+[source, json]
+----
+{
+  "type": "application/astra-app",
+  "version": "2.0",
+  "name": "mysql-clone",
+  "clusterID": "30880586-d579-4d27-930f-a9633e59173b",
+  "sourceClusterID": "30880586-d579-4d27-930f-a9633e59173b",
+  "namespace": "mysql-ns",
+  "sourceAppID": "e591ee59-ea90-4a9f-8e6c-d2b6e8647096"
+}
+----
+
+
+===== curl 示例：克隆应用程序
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

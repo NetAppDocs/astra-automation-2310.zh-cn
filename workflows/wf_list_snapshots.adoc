@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_snapshots.html 
+keywords:  
+summary: 您可以列出为特定应用程序创建的快照。 
+---
+= 列出快照
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以列出为特定应用程序创建的快照。
+
+
+
+=== 开始之前
+
+您必须具有要列出其快照的应用程序的ID。如果需要，您可以使用此工作流 link:wf_list_man_apps.html["列出应用程序"] 以查找应用程序。
+
+
+
+=== 1. 列出快照
+
+执行以下REST API调用以列出快照。
+
+[cols="25,75"]
+|===
+| HTTP 方法 | 路径 
+
+
+| 获取 | /accouns/｛account_id｝/k8s/v1/apps/｛app_id｝/appSaps 
+|===
+
+
+===== 其他输入参数
+
+除了所有 REST API 调用通用的参数之外，此步骤的 curl 示例还使用以下参数。
+
+[cols="15,10,10,65"]
+|===
+| 参数 | Type | Required | Description 
+
+
+| 应用程序ID | 路径 | 是的。 | 标识拥有列出快照的应用程序。 
+
+
+| count | 查询 | 否 | 条件 `count=true` 快照数量包括在响应的元数据部分中。 
+|===
+
+
+===== curl 示例：返回应用程序的所有快照
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== curl 示例：返回应用程序和计数的所有快照
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps?count=true' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSON 输出示例
+
+[source, json]
+----
+{
+    "items": [
+        {
+            "type": "application/astra-appSnap",
+            "version": "1.1",
+            "id": "1ce34da4-bb0a-4926-b925-4a5d85dda8c2",
+            "hookState": "success",
+            "metadata": {
+                "createdBy": "a530e865-23e8-4e2e-8020-e92c419a3867",
+                "creationTimestamp": "2022-10-30T22:44:20Z",
+                "modificationTimestamp": "2022-10-30T22:44:20Z",
+                "labels": []
+            },
+            "snapshotAppAsset": "0ebfe3f8-40ed-4bdc-88c4-2144fbda85a0",
+            "snapshotCreationTimestamp": "2022-10-30T22:44:33Z",
+            "name": "snapshot-david-1",
+            "state": "completed",
+            "stateUnready": []
+        }
+    ],
+    "metadata": {}
+}
+----
