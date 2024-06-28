@@ -618,7 +618,6 @@
   <block id="8a95104150e07b745de96037e7eb15b4" category="list-text">完整的 URL</block>
   <block id="d01376790c7b0b81f92f0a93fe0d3fad" category="paragraph">相应端点的完整URL为：<block ref="889041d0c093d3ff7a84829871523416" prefix=" " category="inline-code"></block>。</block>
   <block id="b844ee2db8fd78557f753d0c04015c4a" category="summary">Astra Control是一款NetApp软件产品、可为您的Kubernetes应用程序提供数据生命周期管理。根据您的环境、有两种部署模式可供选择。Astra Control Center和Astra Control Service会共享同一个REST API、具体取决于版本。您可以使用REST API和其他相关自动化技术来管理Astra Control部署。</block>
-  <block id="1a0ca7f0a5aea880c24d544b4655d6ed" category="doc">Astra Control Automation 文档</block>
   <block id="7128d9d8a839786105f002007172fbe5" category="summary">NetApp会定期更新Astra Control REST API、为您提供新功能、增强功能和错误修复。</block>
   <block id="c93cc787737ceea532bea714170e32cf" category="doc">Astra Control REST API 的新增功能</block>
   <block id="6881779f2ae76c74d15a56eaefcccd8b" category="section-title">2023年11月7日(23.10)</block>
@@ -1250,4 +1249,13 @@
   <block id="b65e59022e022b723c1c1fbb73cd0092" category="sidebar">列出分段</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">入门</block>
   <block id="157ecd713825d83c3595df6b4c0c11af" category="sidebar">访问参考文档</block>
+  <block id="2ce5679e796a226301682da2e8eb77f6" category="sidebar">Astra Control Automation 23.10文档</block>
+  <block id="547abae9d6ca9df339ec4543e220ab8e" category="sidebar">首次API调用</block>
+  <block id="4beba69037bd14812e726a2a137a8c7f" category="sidebar">核心REST设计</block>
+  <block id="b4ec6b7393a41bf5e5870f1ce48009e5" category="sidebar">REST 资源和集合</block>
+  <block id="f38713c0367843938a57ef219a3bfbfc" category="sidebar">Astra API 资源摘要</block>
+  <block id="e6b088db24ebe67ed0e9567d309387ec" category="sidebar">工作流</block>
+  <block id="9a5f09cf66e692efdae493ce4c9aa64f" category="sidebar">准备</block>
+  <block id="a7f5f35426b927411fc9231b56382173" category="sidebar">Python</block>
+  <block id="ea1c0b8e4018f75659e26eb720b206e5" category="sidebar">本机使用 Python</block>
 </blocks>
