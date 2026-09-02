@@ -18,6 +18,7 @@ summary: 您可以列出为特定 Astra 帐户定义的 S3 存储分段。
 
 
 
+[[1-list-the-buckets]]
 === 1. 列出分段
 
 执行以下REST API调用以列出分段。

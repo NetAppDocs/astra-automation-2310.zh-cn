@@ -18,6 +18,7 @@ summary: 您可以列出特定 Astra 帐户的通知。您可以在监控系统�
 
 
 
+[[1-list-the-notifications]]
 === 1. 列出通知
 
 执行以下 REST API 调用。

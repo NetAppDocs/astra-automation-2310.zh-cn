@@ -18,6 +18,7 @@ summary: 您可以列出当前由 Astra 管理的 Kubernetes 集群。
 
 
 
+[[1-list-the-managed-clusters]]
 === 1.列出受管集群
 
 执行以下 REST API 调用。

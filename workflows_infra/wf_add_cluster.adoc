@@ -21,12 +21,14 @@ NOTE: 使用主要云提供商之一(AKS、EKS、GKE）提供的Kubernetes服务
 
 
 
+[[1-obtain-the-kubeconfig-file]]
 === 1.获取kubeconfig文件
 
 您需要从Kubernetes管理员或服务处获取一份* kubconfig*文件副本。
 
 
 
+[[2-prepare-the-kubeconfig-file]]
 === 2.准备kubeconfig文件
 
 在使用* kubeconfig*文件之前、应执行以下操作：
@@ -44,6 +46,7 @@ NOTE: 使用主要云提供商之一(AKS、EKS、GKE）提供的Kubernetes服务
 
 
 
+[[3-select-the-cloud]]
 === 3.选择云
 
 执行工作流 link:../workflows_infra/wf_list_clouds.html["列出云"] 并选择要添加集群的云。
@@ -53,6 +56,7 @@ NOTE: 您只能选择*私有*云。
 
 
 
+[[4-create-a-credential]]
 === 4.创建凭据
 
 执行以下REST API调用以使用kubeconfig文件创建凭据。
@@ -91,6 +95,7 @@ curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>
 ----
 
 
+[[5-add-the-cluster]]
 === 5.添加集群
 
 执行以下REST API调用以将集群添加到云。的值 `credentialID` 输入字段是从上一步中的REST API调用获取的。

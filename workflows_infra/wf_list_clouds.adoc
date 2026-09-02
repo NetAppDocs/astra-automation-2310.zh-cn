@@ -18,6 +18,7 @@ summary: 您可以列出特定Astra帐户定义和可用的云。
 
 
 
+[[1-list-the-clouds]]
 === 1.列出云
 
 执行以下REST API调用以列出云。

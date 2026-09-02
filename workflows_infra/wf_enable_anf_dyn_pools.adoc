@@ -21,6 +21,7 @@ NOTE: 动态ANF池是使用Azure NetApp Files (ANF)存储后端的Astra托管应
 
 
 
+[[1-add-the-azure-subscription-identifier]]
 === 1.添加Azure订阅标识符
 
 执行以下 REST API 调用。
@@ -72,18 +73,21 @@ curl --location -i --request POST --data @JSONinput 'https://astra.netapp.io/acc
 ----
 
 
+[[2-add-a-bucket-if-needed]]
 === 2.根据需要添加存储分段
 
 如果需要、您应向受管应用程序添加存储分段。
 
 
 
+[[3-take-a-backup-of-the-managed-app]]
 === 3.备份托管应用程序
 
 执行工作流 link:../workflows/wf_create_backup.html["为应用程序创建备份"]。存在初始永久性卷的容量池将自动扩展和缩减。
 
 
 
+[[4-review-the-event-log]]
 === 4.查看事件日志
 
 备份期间会记录活动事件。执行工作流 link:../workflows/wf_list_notifications.html["列出通知"] 可查看信息。
